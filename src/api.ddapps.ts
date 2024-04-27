@@ -24,7 +24,7 @@ export class LApi extends Api<
       case ELOpType.SendChatMessage:
         this.send(
           ELMType.AnswerChatMessage,
-          message.payload.payload as ILMPayload[ELMType.AnswerChatMessage],
+          message,
           LPeer
         )
         break;
