@@ -47,15 +47,6 @@ export class LPeer extends Peer<
       
     // Implement your second handler here
     const openai = new OpenAI({ apiKey: key });
-
-    this.send(
-      EMType.LogMessage,
-      {
-        message: 'History',
-        detail: history
-      },
-      EComponent.Logger
-    )
     
     const chatCompletion = await openai.chat.completions.create({
       messages: history,
